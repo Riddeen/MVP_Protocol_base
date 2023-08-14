@@ -27,6 +27,9 @@ class View(tk.Tk):
         self.entry = ttk.Entry(frame, textvariable=self.entry_var)
         self.entry.pack()
         
+    def add_frame(self, frame: tk.Tk):
+        frame.pack(side=tk.RIGHT)
+        
     def get_entry(self) -> str:
         return self.entry_var.get()
     
