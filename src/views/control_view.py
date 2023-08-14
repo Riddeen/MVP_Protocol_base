@@ -1,3 +1,4 @@
+from enum import auto
 import tkinter as tk
 from tkinter import ttk
 from typing import Protocol
@@ -12,7 +13,7 @@ class ControlPresenter(Protocol):
         ...
 
 class ControlView(ttk.Frame):
-    def __init__(self, container) -> None:
+    def __init__(self, container: tk.Tk) -> None:
         super().__init__(container)
         
     def init_ui(self, presenter: ControlPresenter) -> None:     

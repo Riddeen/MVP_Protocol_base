@@ -1,4 +1,4 @@
-from __future__ import annotations
+from __future__ import annotations 
 from typing import Protocol
 
 from models.model import Model
@@ -17,7 +17,7 @@ class View(Protocol):
     def get_entry(self) -> str:
         ...
         
-    def set_entry(self, value) -> None:
+    def set_entry(self, value: str) -> None:
         ...
         
     def mainloop(self) -> None:

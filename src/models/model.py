@@ -29,7 +29,7 @@ class Model:
         self._value_b = new_value_b
         
     @property
-    def step(self) -> int:
+    def step(self) -> float:
         return self._step 
     
     @step.setter

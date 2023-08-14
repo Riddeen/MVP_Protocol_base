@@ -11,7 +11,7 @@ class ControlView(Protocol):
     def get_entry(self) -> str:
         ...
         
-    def set_entry(self, value) -> None:
+    def set_entry(self, value: str) -> None:
         ...
 
 
@@ -22,12 +22,12 @@ class ControlPresenter:
         
     def handle_inc_value_b(self, event=None) -> None:
         self.model.value_b = self.model.increment(self.model.value_b, True, self.model.step)
-        self.view.set_entry(self.model.value_b)
+        self.view.set_entry(str(self.model.value_b))
         
     def handle_dec_value_b(self, event=None) -> None:
         self.model.value_b = self.model.increment(self.model.value_b, False, self.model.step)
-        self.view.set_entry(self.model.value_b)
+        self.view.set_entry(str(self.model.value_b))
 
     def init_ui(self) -> None:
         self.view.init_ui(self)
-        self.view.set_entry(self.model.value_b)
+        self.view.set_entry(str(self.model.value_b))
