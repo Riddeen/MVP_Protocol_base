@@ -11,9 +11,6 @@ class View(Protocol):
     def init_ui(self, presenter: Presenter) -> None:
         ...
         
-    def add_frame(self, frame: tk.Tk):
-        ...
-        
     def get_entry(self) -> str:
         ...
         
@@ -40,7 +37,6 @@ class Presenter:
         self.control_view = ControlView(self.view)
         self.control_presenter = ControlPresenter(self.model, self.control_view)
         self.control_presenter.init_ui()
-        self.view.add_frame(self.control_presenter.view) 
             
     def run(self) -> None:
         self.init_ui()

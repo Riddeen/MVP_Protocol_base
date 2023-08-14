@@ -14,6 +14,7 @@ class View(tk.Tk):
         super().__init__()
         self.title(TITLE)
         self.geometry("500x300")
+        self._frames: list[tk.Tk] = []
         
     def init_ui(self, presenter: Presenter) -> None:
         frame = ttk.Frame(self)
@@ -28,7 +29,8 @@ class View(tk.Tk):
         self.entry.pack()
         
     def add_frame(self, frame: tk.Tk):
-        frame.pack(side=tk.RIGHT)
+        self._frames.append(frame)
+        frame.pack(side=tk.RIGHT, padx=20)
         
     def get_entry(self) -> str:
         return self.entry_var.get()

@@ -15,6 +15,7 @@ class ControlPresenter(Protocol):
 class ControlView(ttk.Frame):
     def __init__(self, container: tk.Tk) -> None:
         super().__init__(container)
+        container.add_frame(self)
         
     def init_ui(self, presenter: ControlPresenter) -> None:     
         self.entry_var = tk.StringVar(value='')
